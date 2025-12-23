@@ -28,8 +28,8 @@ pnpm version patch  # or minor/major
 pnpm publish
 
 # 3. Update consuming projects
-cd ../vantum-backend && pnpm update @Jatin5120/shared
-cd ../vantum-frontend && pnpm update @Jatin5120/shared
+cd ../vantum-backend && pnpm update @Jatin5120/vantum-shared
+cd ../vantum-frontend && pnpm update @Jatin5120/vantum-shared
 ```
 
 ## For Package Users (Backend/Frontend)
@@ -37,19 +37,21 @@ cd ../vantum-frontend && pnpm update @Jatin5120/shared
 ### Installation
 
 1. **Create `.npmrc` in project root:**
+
    ```
    @Jatin5120:registry=https://npm.pkg.github.com
    //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
    ```
 
 2. **Set GITHUB_TOKEN:**
+
    ```bash
    export GITHUB_TOKEN=your_token_here
    ```
 
 3. **Install:**
    ```bash
-   pnpm add @Jatin5120/shared
+   pnpm add @Jatin5120/vantum-shared
    ```
 
 ### Usage
@@ -61,7 +63,7 @@ import {
   EventMessage,
   ErrorCode,
   toErrorEventType,
-} from '@Jatin5120/shared';
+} from "@Jatin5120/vantum-shared";
 
 // Use constants
 const eventType = VOICECHAT_EVENTS.AUDIO_START;
@@ -72,12 +74,11 @@ const payload: AudioStartPayload = {
 };
 
 // Use utilities
-const errorType = toErrorEventType('voicechat.audio.start');
+const errorType = toErrorEventType("voicechat.audio.start");
 ```
 
 ### Updating
 
 ```bash
-pnpm update @Jatin5120/shared
+pnpm update @Jatin5120/vantum-shared
 ```
-

@@ -1,4 +1,4 @@
-# Setup Guide for @Jatin5120/shared
+# Setup Guide for @Jatin5120/vantum-shared
 
 This guide walks you through setting up and publishing the shared package to GitHub Packages.
 
@@ -74,7 +74,7 @@ Make sure the `publishConfig` in `package.json` matches your GitHub username/org
 }
 ```
 
-The package name `@Jatin5120/shared` should match your GitHub username/org. If your GitHub username is different, update it:
+The package name `@Jatin5120/vantum-shared` should match your GitHub username/org. If your GitHub username is different, update it:
 
 ```json
 {
@@ -98,6 +98,7 @@ pnpm publish
 ```
 
 If prompted for authentication:
+
 - Username: Your GitHub username
 - Password: Your Personal Access Token (not your GitHub password!)
 
@@ -105,7 +106,7 @@ If prompted for authentication:
 
 1. Go to your GitHub repository
 2. Click on "Packages" (right side of the repo page)
-3. You should see `@Jatin5120/shared` package listed
+3. You should see `@Jatin5120/vantum-shared` package listed
 
 ## Step 8: Configure Consuming Projects
 
@@ -128,10 +129,10 @@ export GITHUB_TOKEN=your_token_here
 
 ```bash
 # In backend/
-pnpm add @Jatin5120/shared
+pnpm add @Jatin5120/vantum-shared
 
 # In frontend/
-pnpm add @Jatin5120/shared
+pnpm add @Jatin5120/vantum-shared
 ```
 
 ## Step 9: CI/CD Setup
@@ -152,9 +153,9 @@ jobs:
           version: 10.25.0
       - uses: actions/setup-node@v3
         with:
-          node-version: '18'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@Jatin5120'
+          node-version: "18"
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@Jatin5120"
       - run: echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" > .npmrc
       - run: pnpm install
       - run: pnpm test
@@ -187,10 +188,10 @@ pnpm publish
 
 # 5. Update consuming projects
 cd ../vantum-backend
-pnpm update @Jatin5120/shared
+pnpm update @Jatin5120/vantum-shared
 
 cd ../vantum-frontend
-pnpm update @Jatin5120/shared
+pnpm update @Jatin5120/vantum-shared
 ```
 
 ## Troubleshooting
@@ -198,6 +199,7 @@ pnpm update @Jatin5120/shared
 ### Error: "You must be logged in to publish packages"
 
 **Solution:** Make sure `GITHUB_TOKEN` is set:
+
 ```bash
 echo $GITHUB_TOKEN  # Should show your token
 ```
@@ -205,6 +207,7 @@ echo $GITHUB_TOKEN  # Should show your token
 ### Error: "Package name must be scoped"
 
 **Solution:** Package name must start with `@username/` or `@org/`:
+
 ```json
 {
   "name": "@YOUR_USERNAME/shared"
@@ -213,7 +216,8 @@ echo $GITHUB_TOKEN  # Should show your token
 
 ### Error: "404 Not Found" when installing
 
-**Solution:** 
+**Solution:**
+
 1. Check that package is published (GitHub → Packages)
 2. Verify `.npmrc` is configured correctly
 3. Make sure `GITHUB_TOKEN` has `read:packages` permission
@@ -221,6 +225,7 @@ echo $GITHUB_TOKEN  # Should show your token
 ### Error: "403 Forbidden" when publishing
 
 **Solution:**
+
 1. Check that token has `write:packages` permission
 2. Verify package name matches your GitHub username/org
 3. Make sure you're authenticated: `npm whoami --registry=https://npm.pkg.github.com`
@@ -234,4 +239,3 @@ echo $GITHUB_TOKEN  # Should show your token
 5. 🔄 Test that everything works
 
 See the main README.md for usage examples.
-

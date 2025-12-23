@@ -1,5 +1,5 @@
 {
-  "name": "@Jatin5120/shared",
+  "name": "@Jatin5120/vantum-shared",
   "version": "1.0.0",
   "description": "Shared types, constants, and utilities for Vantum frontend and backend",
   "main": "dist/index.js",
@@ -18,7 +18,7 @@
     "types",
     "websocket"
   ],
-  "author": "",
+  "author": "Jatin",
   "license": "ISC",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"

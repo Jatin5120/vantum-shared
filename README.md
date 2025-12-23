@@ -1,4 +1,4 @@
-# @Jatin5120/shared
+# @Jatin5120/vantum-shared
 
 Shared types, constants, and utilities for Vantum frontend and backend.
 
@@ -33,9 +33,9 @@ export GITHUB_TOKEN=your_token_here
 ### 3. Install
 
 ```bash
-pnpm add @Jatin5120/shared
+pnpm add @Jatin5120/vantum-shared
 # or
-npm install @Jatin5120/shared
+npm install @Jatin5120/vantum-shared
 ```
 
 ## Usage
@@ -49,7 +49,7 @@ import {
   ErrorCode,
   toErrorEventType,
   isAudioStartPayload,
-} from "@Jatin5120/shared";
+} from "@Jatin5120/vantum-shared";
 
 // Use event constants
 const eventType = VOICECHAT_EVENTS.AUDIO_START;
@@ -111,7 +111,7 @@ This compiles TypeScript to JavaScript in the `dist/` directory.
 3. **Update consuming projects:**
    ```bash
    # In backend/frontend
-   pnpm update @Jatin5120/shared
+   pnpm update @Jatin5120/vantum-shared
    ```
 
 ## Package Structure

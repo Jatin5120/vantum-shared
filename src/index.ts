@@ -1,5 +1,5 @@
 /**
- * @Jatin5120/shared
+ * @Jatin5120/vantum-shared
  * 
  * Shared types, constants, and utilities for Vantum frontend and backend
  * 
