@@ -1,0 +1,29 @@
+{
+  "name": "@Jatin5120/shared",
+  "version": "1.0.0",
+  "description": "Shared types, constants, and utilities for Vantum frontend and backend",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "pnpm build",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "vantum",
+    "shared",
+    "types",
+    "websocket"
+  ],
+  "author": "",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
